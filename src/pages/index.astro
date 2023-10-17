@@ -1,16 +1,32 @@
 ---
-
+import meImg from "../images/girl.jpg";
+import ListItem from "../components/ListItem.astro";
+import '@fontsource-variable/roboto-mono';
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body class="bg-[#251621] flex justify-center items-center h-screen font-mono">
+    <main class="flex gap-8">
+      <div>
+        <img
+          src={meImg.src}
+          class="object-cover w-96 h-96 object-left"
+          alt="Profile photo"
+        />
+      </div>
+      <div>
+        <ul>
+          <ListItem key="OS" value="Arch Linux x86_64" />
+          <ListItem key="Host" value="80Mk Lenovo Yoga" />
+        </ul>
+      </div>
+    </main>
+  </body>
 </html>
