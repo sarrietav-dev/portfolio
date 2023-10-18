@@ -1,0 +1,15 @@
+---
+import type { Code, Debug } from "astro:components";
+import ListItem from "./ListItem.astro";
+import type { Image } from "astro:assets";
+
+interface Props {
+  items: { key: string; value: string }[];
+}
+
+const { items } = Astro.props;
+---
+
+<ul>
+  {items.map((item) => <ListItem {...item} />)}
+</ul>

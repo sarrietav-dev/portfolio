@@ -1,7 +1,69 @@
 ---
 import meImg from "../images/girl.jpg";
 import ListItem from "../components/ListItem.astro";
-import '@fontsource-variable/roboto-mono';
+import "@fontsource-variable/roboto-mono";
+import AppList from "../components/AppList.astro";
+
+const host = "black@bonez";
+
+const items: { key: string; value: string }[] = [
+  {
+    key: "OS",
+    value: "Arch Linux x86_64",
+  },
+  {
+    key: "Host",
+    value: "80MK Lenovo YOGA",
+  },
+  {
+    key: "Uptime",
+    value: "3 hours, 32 mins",
+  },
+  {
+    key: "Packages",
+    value: "1234",
+  },
+  {
+    key: "Shell",
+    value: "zsh 5.8",
+  },
+  {
+    key: "Resolution",
+    value: "1920x1080",
+  },
+  {
+    key: "DE",
+    value: "KDE 5.83.0 / Plasma 5.22.4",
+  },
+  {
+    key: "WM",
+    value: "KWin",
+  },
+  {
+    key: "WM Theme",
+    value: "Sweet-Dark",
+  },
+  {
+    key: "Theme",
+    value: "Sweet-Dark [GTK2/3]",
+  },
+  {
+    key: "Icons",
+    value: "Sweet-Dark [GTK2/3]",
+  },
+  {
+    key: "Terminal",
+    value: "konsole",
+  },
+  {
+    key: "CPU",
+    value: "Intel i5-6200U (4) @ 2.800GHz",
+  },
+  {
+    key: "GPU",
+    value: "Intel Skylake GT2 [HD Graphics 520]",
+  },
+];
 ---
 
 <html lang="en">
@@ -12,20 +74,21 @@ import '@fontsource-variable/roboto-mono';
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body class="bg-[#251621] flex justify-center items-center h-screen font-mono">
+  <body
+    class="bg-[#251621] flex justify-center items-center h-screen font-mono"
+  >
     <main class="flex gap-8">
       <div>
         <img
           src={meImg.src}
-          class="object-cover w-96 h-96 object-left"
+          class="object-cover w-[30rem] h-[30rem] object-left"
           alt="Profile photo"
         />
       </div>
       <div>
-        <ul>
-          <ListItem key="OS" value="Arch Linux x86_64" />
-          <ListItem key="Host" value="80Mk Lenovo Yoga" />
-        </ul>
+        <p class="text-orange-200 font-bold">{host}</p>
+        <p class="text-orange-200 font-bold">---------</p>
+        <AppList items={items} />
       </div>
     </main>
   </body>
