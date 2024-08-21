@@ -1,0 +1,96 @@
+---
+import aboutImg from "@/assets/about-astro.jpg";
+import PageLayout from "@/layouts/Base.astro";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+
+const meta = {
+	description: "I'm a starter theme for Astro.build",
+	title: "About",
+};
+---
+
+<PageLayout meta={meta}>
+	<div class="space-y-6">
+		<h1 class="title">About</h1>
+		<p>
+			Hi, I'm Sebastian Arrieta, a Colombian software developer with a passion for building systems
+			that positively impact people's lives. I'm driven by a love for learning new technologies and
+			enhancing team collaboration in software development.
+		</p>
+		<p>
+			When I'm not coding or diving into my career, you'll find me reading my Bible or volunteering
+			at my local church.
+		</p>
+		<p>
+			Currently, I'm focused on improving my writing skills through a blog where I share insights on
+			programming and system design. I'm also excited about the journey of starting my own company.
+		</p>
+		<div class="flex justify-center">
+			<Image
+				alt="A photo of me in a restaurant"
+				fetchpriority="high"
+				loading="eager"
+				src={aboutImg}
+			/>
+		</div>
+		<section>
+			<h2 class="title-sm">Professional experience</h2>
+			<ul>
+				<li class="rounded border p-4">
+					<span>
+						<Icon name="mdi:link" class="inline text-xl text-white" />
+						<a
+							href="https://pragma.com.co"
+							target="_blank"
+							class="text-lg font-semibold text-white underline"
+						>
+							Pragma
+						</a>
+					</span>
+					<p class="text-sm text-gray-300">Internship</p>
+					<ul class="mt-4 list-inside list-disc space-y-2">
+						<li>
+							Implemented, maintained, and optimized features for a platform serving over 1000
+							monthly active users.
+						</li>
+						<li>Implemented several multi-step forms using React.js, React Hook Form and Zod.</li>
+						<li>
+							Reduced request loading times by 98%, from 10 seconds to 200 milliseconds,
+							significantly enhancing user experience.
+						</li>
+						<li>
+							Improved build times from 10 minutes by 95%, to 30 seconds improving the overall
+							deployment of the application.
+						</li>
+						<li>
+							Developed, maintained and migrated AWS Lambda functions to AWS SAM, and managed Azure
+							Pipelines.
+						</li>
+						<li>
+							Designed a notification delivery workflow using AWS Lambda, API Gateway, SNS and
+							Firebase Cloud Messaging.
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+		<section>
+			<h2 class="title-sm">Technologies</h2>
+			<p>Here are some of the technologies that I know:</p>
+			<ul class="list-disc">
+				<li><strong>Programming Languages</strong>: Go, Python, Java, TypeScript</li>
+				<li>
+					<strong>Frameworks</strong>: Laravel, ASP.NET, Angular, React Native, Flutter , Next.js,
+					Spring Boot
+				</li>
+				<li><strong>Tools</strong>: Docker, AWS, Azure Pipelines</li>
+				<li><strong>Databases</strong>: MongoDB, PostgreSQL, MySQL</li>
+				<li>
+					<strong>Methodologies</strong>: Domain-Driven Design, Test-Driven Development, RESTful
+					APIs
+				</li>
+			</ul>
+		</section>
+	</div>
+</PageLayout>

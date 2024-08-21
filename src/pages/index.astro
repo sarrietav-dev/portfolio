@@ -1,0 +1,78 @@
+---
+import SocialList from "@/components/SocialList.astro";
+import PostPreview from "@/components/blog/PostPreview.astro";
+import { getAllPosts, sortMDByDate } from "@/data/post";
+import PageLayout from "@/layouts/Base.astro";
+
+const MAX_POSTS = 10;
+const allPosts = await getAllPosts();
+const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
+
+const cactusTech: { desc: string; href: string; title: string; tech: string }[] = [
+	{
+		desc: "A system to improve workflows of managing bookings of college spaces for the university of Cartagena! ",
+		href: "https://github.com/sarrietav-dev/campuscal",
+		title: "CampusCal",
+		tech: "Laravel, Vue.js, TailwindCSS",
+	},
+	{
+		desc: "A software made to manage issues in horizontal properties",
+		href: "https://github.com/sarrietav-dev/horizon",
+		title: "Horizon",
+		tech: "React.js, Spring Boot",
+	},
+	{
+		desc: "A web app for shopping list management and analytics",
+		href: "https://github.com/sarrietav-dev/shoppingify",
+		title: "Shoppingify",
+		tech: "Angular, ASP.NET Core, Domain-Driven Design",
+	},
+];
+---
+
+<PageLayout meta={{ title: "Home" }}>
+	<section>
+		<h1 class="title mb-6">Hello World!</h1>
+		<p class="mb-4">
+			I'm a software engineer with a passion for learning and building software that improves
+			people's lives. When I'm not typing away at my keyboard, you can find me practicing guitar,
+			reading, or working out. I'm always eager to connect with like-minded professionals and
+			explore new opportunities. Let's connect and see how we can make an impact together!
+		</p>
+		<SocialList />
+	</section>
+	<section aria-label="Blog post list" class="mt-16">
+		<h2 class="title mb-4 text-xl">Posts</h2>
+		<ul class="space-y-4">
+			{
+				allPostsByDate.map((p) => (
+					<li class="grid gap-2 sm:grid-cols-[auto_1fr] sm:[&_q]:col-start-2">
+						{/* @ts-expect-error - issue with -> @astrojs/check@0.9.3 */}
+						<PostPreview post={p} />
+					</li>
+				))
+			}
+		</ul>
+	</section>
+	<section class="mt-16">
+		<h2 class="title mb-4 text-xl">Projects</h2>
+		<dl class="space-y-4">
+			{
+				cactusTech.map(({ desc, href, title, tech }) => (
+					<div class="flex flex-col gap-2 sm:flex-row">
+						<dt>
+							<span class="flex">
+								<a class="cactus-link" href={href} rel="noopener noreferrer" target="_blank">
+									{title}
+								</a>
+								:
+							</span>
+						</dt>
+						<dd>{desc}</dd>
+						<dd class="float-right text-sm text-gray-500">{tech}</dd>
+					</div>
+				))
+			}
+		</dl>
+	</section>
+</PageLayout>
