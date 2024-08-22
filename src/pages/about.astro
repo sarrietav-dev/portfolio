@@ -1,8 +1,8 @@
 ---
 import aboutImg from "@/assets/about-astro.jpg";
 import PageLayout from "@/layouts/Base.astro";
-import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 
 const meta = {
 	description: "I'm a starter theme for Astro.build",
@@ -39,11 +39,11 @@ const meta = {
 			<ul>
 				<li class="rounded border p-4">
 					<span>
-						<Icon name="mdi:link" class="inline text-xl text-white" />
+						<Icon class="inline text-xl text-white" name="mdi:link" />
 						<a
+							class="text-lg font-semibold text-white underline"
 							href="https://pragma.com.co"
 							target="_blank"
-							class="text-lg font-semibold text-white underline"
 						>
 							Pragma
 						</a>

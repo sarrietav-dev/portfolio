@@ -8,24 +8,24 @@ const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
-const cactusTech: { desc: string; href: string; title: string; tech: string }[] = [
+const cactusTech: { desc: string; href: string; tech: string; title: string }[] = [
 	{
 		desc: "A system to improve workflows of managing bookings of college spaces for the university of Cartagena! ",
 		href: "https://github.com/sarrietav-dev/campuscal",
-		title: "CampusCal",
 		tech: "Laravel, Vue.js, TailwindCSS",
+		title: "CampusCal",
 	},
 	{
 		desc: "A software made to manage issues in horizontal properties",
 		href: "https://github.com/sarrietav-dev/horizon",
-		title: "Horizon",
 		tech: "React.js, Spring Boot",
+		title: "Horizon",
 	},
 	{
 		desc: "A web app for shopping list management and analytics",
 		href: "https://github.com/sarrietav-dev/shoppingify",
-		title: "Shoppingify",
 		tech: "Angular, ASP.NET Core, Domain-Driven Design",
+		title: "Shoppingify",
 	},
 ];
 ---
@@ -58,7 +58,7 @@ const cactusTech: { desc: string; href: string; title: string; tech: string }[] 
 		<h2 class="title mb-4 text-xl">Projects</h2>
 		<dl class="space-y-4">
 			{
-				cactusTech.map(({ desc, href, title, tech }) => (
+				cactusTech.map(({ desc, href, tech, title }) => (
 					<div class="flex flex-col gap-2 sm:flex-row">
 						<dt>
 							<span class="flex">
