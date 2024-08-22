@@ -8,6 +8,7 @@ import ThemeProvider from "@/components/ThemeProvider.astro";
 import Footer from "@/components/layout/Footer.astro";
 import Header from "@/components/layout/Header.astro";
 import { siteConfig } from "@/site-config";
+import Bokeh from "@/components/Bokeh.astro";
 
 interface Props {
 	meta: SiteMeta;
@@ -24,6 +25,7 @@ const {
 	</head>
 	<body class="bg-bgColor font-mono text-sm font-normal text-textColor antialiased">
 		<Noise />
+    <Bokeh />
 		<div class="mx-auto flex min-h-screen max-w-3xl flex-col px-4 pt-16 sm:px-8">
 			<ThemeProvider />
 			<SkipLink />
