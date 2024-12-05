@@ -18,7 +18,7 @@
 		"@astrojs/tailwind": "5.1.0",
 		"@iconify-json/prime": "^1.1.13",
 		"astro": "4.14.3",
-		"astro-expressive-code": "^0.35.6",
+		"astro-expressive-code": "^0.36.0",
 		"astro-icon": "^1.1.1",
 		"cssnano": "^7.0.5",
 		"rehype-external-links": "^3.0.0",
